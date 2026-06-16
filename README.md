@@ -14,7 +14,7 @@
 
 ### Из exe
 
-Скачай готовый файл `TT Music.exe` из папки `dist/` и запусти.
+Скачай последний релиз: [GitHub Releases](https://github.com/Maksk979/yt-tt-music/releases/latest)
 
 ### Из исходников
 
