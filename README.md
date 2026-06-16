@@ -19,7 +19,7 @@
 ### Из исходников
 
 ```bash
-git clone https://github.com/USERNAME/tt-music.git
+git clone https://github.com/Maksk979/yt-tt-music.git
 cd tt-music
 pip install -r requirements.txt
 python main.py
