@@ -6,6 +6,7 @@ pyinstaller ^
     --windowed ^
     --name "TT Music" ^
     --icon=assets/icon.ico ^
+    --add-data "assets;assets" ^
     --hidden-import yt_dlp ^
     --hidden-import PyQt6 ^
     --hidden-import imageio_ffmpeg ^

@@ -1,11 +1,19 @@
 import os
+import sys
 from PyQt6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QLineEdit, QPushButton, QLabel, QProgressBar, QFileDialog,
     QMessageBox, QGroupBox, QComboBox,
 )
 from PyQt6.QtCore import QThread, pyqtSignal
+from PyQt6.QtGui import QIcon
 from core.extractor import AudioExtractor
+
+
+def resource_path(relative_path):
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', relative_path)
 
 
 class ExtractWorker(QThread):
@@ -50,6 +58,9 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("TT Music — Extractor")
         self.setMinimumSize(500, 300)
+        icon_path = resource_path("assets/icon.ico")
+        if os.path.exists(icon_path):
+            self.setWindowIcon(QIcon(icon_path))
         self.extractor = AudioExtractor()
         self.worker = None
         self._init_ui()
